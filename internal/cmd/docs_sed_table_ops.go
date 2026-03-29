@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/api/docs/v1"
 
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 // runTableRowColOp handles row and column operations: insert, delete, and append.

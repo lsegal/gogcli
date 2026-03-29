@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/api/gmail/v1"
 
-	"github.com/steipete/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/config"
 )
 
 type composeFromResult struct {

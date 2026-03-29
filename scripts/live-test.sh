@@ -33,7 +33,7 @@ Skip keys (base):
   tasks, contacts, people, groups, keep, classroom
 
 Env:
-  GOG_LIVE_EMAIL_TEST=steipete+gogtest@gmail.com
+  GOG_LIVE_EMAIL_TEST=lsegal+gogtest@gmail.com
   GOG_LIVE_GROUP_EMAIL=<group@domain>
   GOG_LIVE_CLASSROOM_COURSE=<courseId>
   GOG_LIVE_CLASSROOM_CREATE=1
@@ -140,7 +140,7 @@ fi
 
 echo "Using account: $ACCOUNT"
 
-EMAIL_TEST="${GOG_LIVE_EMAIL_TEST:-steipete+gogtest@gmail.com}"
+EMAIL_TEST="${GOG_LIVE_EMAIL_TEST:-lsegal+gogtest@gmail.com}"
 TS=$(date +%Y%m%d%H%M%S)
 LIVE_TMP=$(mktemp -d "${TMPDIR:-/tmp}/gog-live-$TS-XXXX")
 trap 'rm -rf "$LIVE_TMP"' EXIT

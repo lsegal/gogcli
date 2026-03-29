@@ -7,8 +7,8 @@ import (
 
 	"google.golang.org/api/gmail/v1"
 
-	"github.com/steipete/gogcli/internal/outfmt"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 type gmailEmailStatusRow struct {

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steipete/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/config"
 )
 
 var errMissingAccount = errors.New("missing account")

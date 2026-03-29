@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steipete/gogcli/internal/outfmt"
-	"github.com/steipete/gogcli/internal/timeparse"
-	"github.com/steipete/gogcli/internal/tracking"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/timeparse"
+	"github.com/lsegal/gogcli/internal/tracking"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 const trackingUnknown = "unknown"

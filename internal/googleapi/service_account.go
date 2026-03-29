@@ -9,7 +9,7 @@ import (
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 
-	"github.com/steipete/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/config"
 )
 
 func serviceAccountSubject(subject string, serviceAccountEmail string) string {

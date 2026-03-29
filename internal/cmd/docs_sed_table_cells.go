@@ -8,7 +8,7 @@ import (
 
 	"google.golang.org/api/docs/v1"
 
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 // runTableCellReplace replaces content in a specific table cell, handling both

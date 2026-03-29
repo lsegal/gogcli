@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/steipete/gogcli/internal/config"
-	"github.com/steipete/gogcli/internal/googleapi"
-	"github.com/steipete/gogcli/internal/secrets"
+	"github.com/lsegal/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/googleapi"
+	"github.com/lsegal/gogcli/internal/secrets"
 )
 
 var (

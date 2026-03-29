@@ -8,8 +8,8 @@ import (
 
 	"google.golang.org/api/chat/v1"
 
-	"github.com/steipete/gogcli/internal/outfmt"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 type ChatDMCmd struct {

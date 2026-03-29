@@ -4,7 +4,7 @@ import (
 	"context"
 	"os"
 
-	"github.com/steipete/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/outfmt"
 )
 
 type pageFetchFunc[T any] func(pageToken string) ([]T, string, error)

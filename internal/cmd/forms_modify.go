@@ -9,8 +9,8 @@ import (
 
 	formsapi "google.golang.org/api/forms/v1"
 
-	"github.com/steipete/gogcli/internal/outfmt"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 // FormsAddQuestionCmd adds a question to an existing form via batchUpdate.

@@ -10,8 +10,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steipete/gogcli/internal/outfmt"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 func setWatchTestConfigHome(t *testing.T) {

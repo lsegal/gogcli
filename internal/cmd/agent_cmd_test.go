@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/steipete/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/outfmt"
 )
 
 func TestAgentExitCodes_JSON(t *testing.T) {

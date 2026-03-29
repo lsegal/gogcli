@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/steipete/gogcli/internal/googleauth"
-	"github.com/steipete/gogcli/internal/secrets"
+	"github.com/lsegal/gogcli/internal/googleauth"
+	"github.com/lsegal/gogcli/internal/secrets"
 )
 
 var (

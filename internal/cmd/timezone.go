@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steipete/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/config"
 )
 
 type timezoneResolveMode int

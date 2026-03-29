@@ -11,11 +11,11 @@ import (
 
 	"google.golang.org/api/calendar/v3"
 
-	"github.com/steipete/gogcli/internal/authclient"
-	"github.com/steipete/gogcli/internal/config"
-	"github.com/steipete/gogcli/internal/googleapi"
-	"github.com/steipete/gogcli/internal/googleauth"
-	"github.com/steipete/gogcli/internal/secrets"
+	"github.com/lsegal/gogcli/internal/authclient"
+	"github.com/lsegal/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/googleapi"
+	"github.com/lsegal/gogcli/internal/googleauth"
+	"github.com/lsegal/gogcli/internal/secrets"
 )
 
 func integrationAccount(t *testing.T) string {

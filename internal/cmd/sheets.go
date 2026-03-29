@@ -10,9 +10,9 @@ import (
 	"google.golang.org/api/drive/v3"
 	"google.golang.org/api/sheets/v4"
 
-	"github.com/steipete/gogcli/internal/googleapi"
-	"github.com/steipete/gogcli/internal/outfmt"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/googleapi"
+	"github.com/lsegal/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 var newSheetsService = googleapi.NewSheets

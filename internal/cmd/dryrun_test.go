@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steipete/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/outfmt"
 )
 
 func TestDryRunExit_JSON_IgnoresResultsOnlyTransform(t *testing.T) {

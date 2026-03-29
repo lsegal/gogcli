@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steipete/gogcli/internal/config"
-	"github.com/steipete/gogcli/internal/googleauth"
+	"github.com/lsegal/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/googleauth"
 )
 
 func TestAuthKeepCmd_JSON(t *testing.T) {

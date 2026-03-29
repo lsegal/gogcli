@@ -15,15 +15,15 @@ scripts/verify-release.sh X.Y.Z
 ```
 
 Assumptions:
-- Repo: `steipete/gogcli`
-- Tap repo: `../homebrew-tap` (tap: `steipete/tap`)
+- Repo: `lsegal/gogcli`
+- Tap repo: `../homebrew-tap` (tap: `lsegal/tap`)
 - Homebrew formula name: `gogcli` (installs the `gog` binary)
 
 ## 0) Prereqs
 - Clean working tree on `main`.
 - Go toolchain installed (Go version comes from `go.mod`).
 - `make` works locally.
-- Access to the tap repo (e.g. `steipete/homebrew-tap`).
+- Access to the tap repo (e.g. `lsegal/homebrew-tap`).
 
 ## 1) Verify build is green
 ```sh
@@ -73,7 +73,7 @@ In the tap repo (assumed sibling at `../homebrew-tap`), create/update `Formula/g
 
 Recommended formula shape (build-from-source, no binary assets needed):
 - `version "X.Y.Z"`
-- `url "https://github.com/steipete/gogcli/archive/refs/tags/vX.Y.Z.tar.gz"`
+- `url "https://github.com/lsegal/gogcli/archive/refs/tags/vX.Y.Z.tar.gz"`
 - `sha256 "<sha256>"`
 - `depends_on "go" => :build`
 - Build:
@@ -81,7 +81,7 @@ Recommended formula shape (build-from-source, no binary assets needed):
 
 Compute the SHA256 for the tag tarball:
 ```sh
-curl -L -o /tmp/gogcli.tar.gz https://github.com/steipete/gogcli/archive/refs/tags/vX.Y.Z.tar.gz
+curl -L -o /tmp/gogcli.tar.gz https://github.com/lsegal/gogcli/archive/refs/tags/vX.Y.Z.tar.gz
 shasum -a 256 /tmp/gogcli.tar.gz
 ```
 
@@ -97,10 +97,10 @@ git push origin main
 ```sh
 brew update
 brew uninstall gogcli || true
-brew untap steipete/tap || true
-brew tap steipete/tap
-brew install steipete/tap/gogcli
-brew test steipete/tap/gogcli
+brew untap lsegal/tap || true
+brew tap lsegal/tap
+brew install lsegal/tap/gogcli
+brew test lsegal/tap/gogcli
 
 gog --help
 ```

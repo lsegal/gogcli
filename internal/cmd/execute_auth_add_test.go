@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/steipete/gogcli/internal/config"
-	"github.com/steipete/gogcli/internal/googleauth"
-	"github.com/steipete/gogcli/internal/secrets"
+	"github.com/lsegal/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/googleauth"
+	"github.com/lsegal/gogcli/internal/secrets"
 )
 
 func TestExecute_AuthAdd_JSON(t *testing.T) {

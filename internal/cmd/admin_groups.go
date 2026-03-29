@@ -8,8 +8,8 @@ import (
 
 	admin "google.golang.org/api/admin/directory/v1"
 
-	"github.com/steipete/gogcli/internal/outfmt"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 // AdminGroupsCmd manages Workspace groups.

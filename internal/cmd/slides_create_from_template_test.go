@@ -14,7 +14,7 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/slides/v1"
 
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 func TestSlidesCreateFromTemplate_Basic(t *testing.T) {

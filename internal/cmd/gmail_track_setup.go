@@ -11,9 +11,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steipete/gogcli/internal/input"
-	"github.com/steipete/gogcli/internal/tracking"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/input"
+	"github.com/lsegal/gogcli/internal/tracking"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 type GmailTrackSetupCmd struct {

@@ -1,4 +1,4 @@
-module github.com/steipete/gogcli
+module github.com/lsegal/gogcli
 
 go 1.25.8
 

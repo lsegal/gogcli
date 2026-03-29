@@ -7,10 +7,10 @@ import (
 
 	"golang.org/x/term"
 
-	"github.com/steipete/gogcli/internal/config"
-	"github.com/steipete/gogcli/internal/outfmt"
-	"github.com/steipete/gogcli/internal/secrets"
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/secrets"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 type AuthKeyringCmd struct {

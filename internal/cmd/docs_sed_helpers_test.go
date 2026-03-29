@@ -12,7 +12,7 @@ import (
 	"google.golang.org/api/docs/v1"
 	gapi "google.golang.org/api/googleapi"
 
-	"github.com/steipete/gogcli/internal/ui"
+	"github.com/lsegal/gogcli/internal/ui"
 )
 
 func TestIsMergeOp(t *testing.T) {

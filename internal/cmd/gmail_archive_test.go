@@ -6,7 +6,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/steipete/gogcli/internal/outfmt"
+	"github.com/lsegal/gogcli/internal/outfmt"
 )
 
 func runGmailBulkDryRun(t *testing.T, cmd any, args []string) map[string]any {

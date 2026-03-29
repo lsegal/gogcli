@@ -15,10 +15,10 @@ import (
 	"github.com/99designs/keyring"
 	"golang.org/x/oauth2"
 
-	"github.com/steipete/gogcli/internal/authclient"
-	"github.com/steipete/gogcli/internal/config"
-	"github.com/steipete/gogcli/internal/googleauth"
-	"github.com/steipete/gogcli/internal/secrets"
+	"github.com/lsegal/gogcli/internal/authclient"
+	"github.com/lsegal/gogcli/internal/config"
+	"github.com/lsegal/gogcli/internal/googleauth"
+	"github.com/lsegal/gogcli/internal/secrets"
 )
 
 var (
