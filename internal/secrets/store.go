@@ -1,6 +1,7 @@
 package secrets
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -466,6 +467,10 @@ func (s *KeyringStore) ListTokens() ([]Token, error) {
 }
 
 func ParseTokenKey(k string) (client string, email string, ok bool) {
+	if strings.HasPrefix(k, "token--") {
+		return parseEncodedTokenKey(k)
+	}
+
 	const prefix = "token:"
 	if !strings.HasPrefix(k, prefix) {
 		return "", "", false
@@ -493,11 +498,19 @@ func ParseTokenKey(k string) (client string, email string, ok bool) {
 }
 
 func tokenKey(client string, email string) string {
-	return fmt.Sprintf("token:%s:%s", client, email)
+	if runtime.GOOS != "windows" {
+		return fmt.Sprintf("token:%s:%s", client, email)
+	}
+
+	return fmt.Sprintf("token--%s--%s", encodeKeyPart(client), encodeKeyPart(email))
 }
 
 func legacyTokenKey(email string) string {
-	return fmt.Sprintf("token:%s", email)
+	if runtime.GOOS != "windows" {
+		return fmt.Sprintf("token:%s", email)
+	}
+
+	return fmt.Sprintf("token--%s", encodeKeyPart(email))
 }
 
 func TokenKey(client string, email string) string {
@@ -520,7 +533,62 @@ func normalizeClient(raw string) (string, error) {
 const defaultAccountKey = "default_account"
 
 func defaultAccountKeyForClient(client string) string {
-	return fmt.Sprintf("default_account:%s", client)
+	if runtime.GOOS != "windows" {
+		return fmt.Sprintf("default_account:%s", client)
+	}
+
+	return fmt.Sprintf("default_account--%s", encodeKeyPart(client))
+}
+
+func parseEncodedTokenKey(k string) (client string, email string, ok bool) {
+	const prefix = "token--"
+	if !strings.HasPrefix(k, prefix) {
+		return "", "", false
+	}
+
+	rest := strings.TrimPrefix(k, prefix)
+	if strings.TrimSpace(rest) == "" {
+		return "", "", false
+	}
+
+	if !strings.Contains(rest, "--") {
+		email, err := decodeKeyPart(rest)
+		if err != nil || strings.TrimSpace(email) == "" {
+			return "", "", false
+		}
+
+		return config.DefaultClientName, email, true
+	}
+
+	parts := strings.SplitN(rest, "--", 2)
+	if len(parts) != 2 {
+		return "", "", false
+	}
+
+	client, err := decodeKeyPart(parts[0])
+	if err != nil || strings.TrimSpace(client) == "" {
+		return "", "", false
+	}
+
+	email, err = decodeKeyPart(parts[1])
+	if err != nil || strings.TrimSpace(email) == "" {
+		return "", "", false
+	}
+
+	return client, email, true
+}
+
+func encodeKeyPart(s string) string {
+	return base64.RawURLEncoding.EncodeToString([]byte(s))
+}
+
+func decodeKeyPart(s string) (string, error) {
+	data, err := base64.RawURLEncoding.DecodeString(s)
+	if err != nil {
+		return "", err
+	}
+
+	return string(data), nil
 }
 
 func (s *KeyringStore) GetDefaultAccount(client string) (string, error) {

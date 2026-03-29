@@ -80,6 +80,10 @@ func TestParseTokenKey(t *testing.T) {
 	if _, _, ok := ParseTokenKey("nope"); ok {
 		t.Fatalf("expected invalid token key")
 	}
+
+	if client, email, ok := ParseTokenKey("token--b3Jn--YUBiLmNvbQ"); !ok || email != "a@b.com" || client != "org" {
+		t.Fatalf("unexpected encoded parse: client=%q email=%q ok=%v", client, email, ok)
+	}
 }
 
 func TestAllowedBackends(t *testing.T) {
@@ -218,6 +222,24 @@ func TestKeyringStoreWritePathsSetLabel(t *testing.T) {
 		if it.Label != config.AppName {
 			t.Fatalf("expected label %q for key %q, got %q", config.AppName, k, it.Label)
 		}
+	}
+}
+
+func TestWindowsKeyFormatAvoidsColons(t *testing.T) {
+	if runtime.GOOS != "windows" {
+		t.Skip("windows-only filename constraint")
+	}
+
+	if got := tokenKey("org", "a@b.com"); strings.Contains(got, ":") {
+		t.Fatalf("tokenKey should not contain ':', got %q", got)
+	}
+
+	if got := legacyTokenKey("a@b.com"); strings.Contains(got, ":") {
+		t.Fatalf("legacyTokenKey should not contain ':', got %q", got)
+	}
+
+	if got := defaultAccountKeyForClient("org"); strings.Contains(got, ":") {
+		t.Fatalf("defaultAccountKeyForClient should not contain ':', got %q", got)
 	}
 }
 
